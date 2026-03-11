@@ -55,11 +55,11 @@ var config = {
             id: 'mejor-estacion',
             alignment: 'right',
             hidden: false,
-            title: 'La estación más limpia: Zorita',
-            image: '',
+            title: 'La estación más limpia: Zorita del Maestrazgo',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Zorita_del_Maestrazgo_01.JPG/960px-Zorita_del_Maestrazgo_01.JPG',
             description: 'La estación de <strong>Zorita</strong>, en la provincia de Guadalajara, registra solo <strong>2,9 µg/m³</strong> — el valor más bajo de toda España y casi la mitad del límite recomendado por la OMS. Situada en un entorno rural sin actividad industrial ni tráfico intenso, es el mejor ejemplo de cómo el territorio condiciona directamente el aire que respiran sus habitantes.',
             location: {
-                center: [-2.88491, 40.32997],
+                center: [-0.17054, 40.74078],
                 zoom: 11,
                 pitch: 40,
                 bearing: 20
@@ -78,7 +78,7 @@ var config = {
             alignment: 'right',
             hidden: false,
             title: 'La costa este, un corredor de aire limpio',
-            image: '',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Playa_El_Fosa_de_Calpe.jpg/1280px-Playa_El_Fosa_de_Calpe.jpg',
             description: 'El litoral mediterráneo concentra varios de los mejores registros del país. <strong>Castelló-Penyeta</strong> (3,0 µg/m³), <strong>Alacant-Rabassa</strong> (3,3 µg/m³) y <strong>Albalat dels Tarongers</strong> (3,5 µg/m³), en la provincia de Valencia, forman un corredor de calidad del aire excepcional. La brisa marina, la menor densidad industrial en estas zonas específicas y las condiciones de ventilación natural explican estos valores.',
             location: {
                 center: [-1.08946, 39.55455],
@@ -102,7 +102,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'La estación más contaminada: Gómez Franqueira',
-            image: '',
+            image: 'https://static.laregion.es/clip/7e96355b-38e9-41ec-82a0-c0e0821abe91_16-9-aspect-ratio_1600w_0.webp',
             description: 'Con <strong>19 µg/m³</strong> — casi cuatro veces el límite de la OMS — la estación de Gómez Franqueira encabeza el ranking negativo de toda España. Le sigue <strong>La Rábida</strong> en Huelva (17 µg/m³), situada junto al polo petroquímico de Palos de la Frontera, uno de los complejos industriales más grandes del país. En ambos casos, la proximidad a focos industriales es el factor determinante.',
             location: {
                 center: [-7.90508, 42.34392],
@@ -189,4 +189,3 @@ var config = {
         }
     ]
 };
-
