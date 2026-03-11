@@ -57,7 +57,7 @@ var config = {
             hidden: false,
             title: 'La estación más limpia: Zorita del Maestrazgo',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Zorita_del_Maestrazgo_01.JPG/960px-Zorita_del_Maestrazgo_01.JPG',
-            description: 'La estación de <strong>Zorita</strong>, en la provincia de Guadalajara, registra solo <strong>2,9 µg/m³</strong> — el valor más bajo de toda España y casi la mitad del límite recomendado por la OMS. Situada en un entorno rural sin actividad industrial ni tráfico intenso, es el mejor ejemplo de cómo el territorio condiciona directamente el aire que respiran sus habitantes.',
+            description: 'La estación de <strong>Zorita del Maestrazgo</strong>, en el interior de Castellón, registra solo <strong>2,9 µg/m³</strong> — el valor más bajo de toda España y casi la mitad del límite recomendado por la OMS. Enclavada en plena comarca del Maestrazgo, a más de 1.000 metros de altitud y lejos de cualquier foco industrial o urbano, es el mejor ejemplo de cómo el territorio y la altitud condicionan directamente la calidad del aire.',
             location: {
                 center: [-0.17054, 40.74078],
                 zoom: 11,
@@ -124,7 +124,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Madrid: contaminación en el centro de la ciudad',
-            image: '',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg/1920px-Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg',
             description: 'Madrid es la provincia con más estaciones de medición del país (28) y registra una media de <strong>9,83 µg/m³</strong>, casi el doble del límite recomendado. La estación de <strong>Junta Municipal de Moratalaz</strong>, con 16 µg/m³, es una de las más contaminadas de toda España. El tráfico intenso y la densidad urbana son los principales responsables de los niveles elevados en el interior de la capital.',
             location: {
                 center: [-3.68, 40.41],
@@ -146,7 +146,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Canarias: un problema inesperado',
-            image: '',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/At_Plaza_de_Espa%C3%B1a%2C_Santa_Cruz_de_Tenerife_2019_009_edited.jpg/1280px-At_Plaza_de_Espa%C3%B1a%2C_Santa_Cruz_de_Tenerife_2019_009_edited.jpg',
             description: 'Las Islas Canarias sorprenden con dos estaciones entre las cinco peores de España. <strong>Parque La Granja</strong> en Santa Cruz de Tenerife (16 µg/m³) y <strong>Centro Cultural Alfredo Krauss</strong> en Las Palmas de Gran Canaria (16 µg/m³) destacan negativamente. La causa no es la industria sino la <strong>calima</strong>: el polvo del Sáhara que cruza el Atlántico periódicamente y dispara los niveles de partículas en suspensión.',
             location: {
                 center: [-15.5, 28.2],
