@@ -1,5 +1,5 @@
 var config = {
-    style: 'style.json',
+    style: 'map/style.json',
     showMarkers: false,
     theme: 'light',
     title: 'Calidad del Aire en España',
@@ -59,7 +59,7 @@ var config = {
             image: '',
             description: 'La estación de <strong>Zorita</strong>, en la provincia de Guadalajara, registra solo <strong>2,9 µg/m³</strong> — el valor más bajo de toda España y casi la mitad del límite recomendado por la OMS. Situada en un entorno rural sin actividad industrial ni tráfico intenso, es el mejor ejemplo de cómo el territorio condiciona directamente el aire que respiran sus habitantes.',
             location: {
-                center: [-2.87, 40.78],
+                center: [-2.88491, 40.32997],
                 zoom: 11,
                 pitch: 40,
                 bearing: 20
@@ -81,8 +81,8 @@ var config = {
             image: '',
             description: 'El litoral mediterráneo concentra varios de los mejores registros del país. <strong>Castelló-Penyeta</strong> (3,0 µg/m³), <strong>Alacant-Rabassa</strong> (3,3 µg/m³) y <strong>Albalat dels Tarongers</strong> (3,5 µg/m³), en la provincia de Valencia, forman un corredor de calidad del aire excepcional. La brisa marina, la menor densidad industrial en estas zonas específicas y las condiciones de ventilación natural explican estos valores.',
             location: {
-                center: [-0.2, 39.4],
-                zoom: 7.5,
+                center: [-1.08946, 39.55455],
+                zoom: 6.5,
                 pitch: 20,
                 bearing: 0
             },
@@ -105,7 +105,7 @@ var config = {
             image: '',
             description: 'Con <strong>19 µg/m³</strong> — casi cuatro veces el límite de la OMS — la estación de Gómez Franqueira encabeza el ranking negativo de toda España. Le sigue <strong>La Rábida</strong> en Huelva (17 µg/m³), situada junto al polo petroquímico de Palos de la Frontera, uno de los complejos industriales más grandes del país. En ambos casos, la proximidad a focos industriales es el factor determinante.',
             location: {
-                center: [-8.72, 42.58],
+                center: [-7.90508, 42.34392],
                 zoom: 10,
                 pitch: 30,
                 bearing: -10
@@ -128,7 +128,7 @@ var config = {
             description: 'Madrid es la provincia con más estaciones de medición del país (28) y registra una media de <strong>9,83 µg/m³</strong>, casi el doble del límite recomendado. La estación de <strong>Junta Municipal de Moratalaz</strong>, con 16 µg/m³, es una de las más contaminadas de toda España. El tráfico intenso y la densidad urbana son los principales responsables de los niveles elevados en el interior de la capital.',
             location: {
                 center: [-3.68, 40.41],
-                zoom: 11,
+                zoom: 9,
                 pitch: 30,
                 bearing: 10
             },
@@ -150,7 +150,7 @@ var config = {
             description: 'Las Islas Canarias sorprenden con dos estaciones entre las cinco peores de España. <strong>Parque La Granja</strong> en Santa Cruz de Tenerife (16 µg/m³) y <strong>Centro Cultural Alfredo Krauss</strong> en Las Palmas de Gran Canaria (16 µg/m³) destacan negativamente. La causa no es la industria sino la <strong>calima</strong>: el polvo del Sáhara que cruza el Atlántico periódicamente y dispara los niveles de partículas en suspensión.',
             location: {
                 center: [-15.5, 28.2],
-                zoom: 7.5,
+                zoom: 7,
                 pitch: 0,
                 bearing: 0
             },
