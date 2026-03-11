@@ -52,6 +52,27 @@ var config = {
             onChapterExit: []
         },
         {
+            id: 'las-estaciones',
+            alignment: 'center',
+            hidden: false,
+            title: 'Una red de 330 estaciones de vigilancia', image: '',
+            description: 'Para entender la calidad del aire a nivel local, el Ministerio para la Transición Ecológica recopila datos de <strong>330 estaciones de medición</strong> distribuidas por toda la geografía española. Cada punto del mapa representa una estación real que monitoriza continuamente las partículas que respiramos.',
+            location: {
+                center: [-3.7, 40.2],
+                zoom: 5.8,
+                pitch: 45,
+                bearing: -15
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill', opacity: 0.3 },
+                { layer: 'pm25-puntos', opacity: 1 },
+                { layer: 'top5-peores', opacity: 0 },
+                { layer: 'top5-mejores', opacity: 0 }
+            ],
+            onChapterExit: []
+        },
+        {
             id: 'mejor-estacion',
             alignment: 'right',
             hidden: false,
@@ -202,7 +223,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 1 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -211,4 +232,5 @@ var config = {
         }
     ]
 };
+
 
