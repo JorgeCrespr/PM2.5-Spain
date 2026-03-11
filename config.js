@@ -124,7 +124,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Madrid: contaminación en el centro de la ciudad',
-            image: '',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg/1920px-Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg',
             description: 'Madrid es la provincia con más estaciones de medición del país (28) y registra una media de <strong>9,83 µg/m³</strong>, casi el doble del límite recomendado. La estación de <strong>Junta Municipal de Moratalaz</strong>, con 16 µg/m³, es una de las más contaminadas de toda España. El tráfico intenso y la densidad urbana son los principales responsables de los niveles elevados en el interior de la capital.',
             location: {
                 center: [-3.68, 40.41],
@@ -146,7 +146,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Canarias: un problema inesperado',
-            image: '',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/At_Plaza_de_Espa%C3%B1a%2C_Santa_Cruz_de_Tenerife_2019_009_edited.jpg/1280px-At_Plaza_de_Espa%C3%B1a%2C_Santa_Cruz_de_Tenerife_2019_009_edited.jpg',
             description: 'Las Islas Canarias sorprenden con dos estaciones entre las cinco peores de España. <strong>Parque La Granja</strong> en Santa Cruz de Tenerife (16 µg/m³) y <strong>Centro Cultural Alfredo Krauss</strong> en Las Palmas de Gran Canaria (16 µg/m³) destacan negativamente. La causa no es la industria sino la <strong>calima</strong>: el polvo del Sáhara que cruza el Atlántico periódicamente y dispara los niveles de partículas en suspensión.',
             location: {
                 center: [-15.5, 28.2],
@@ -186,6 +186,29 @@ var config = {
                 { layer: 'top5-mejores', opacity: 1 }
             ],
             onChapterExit: []
+        },
+                {
+            id: 'explora',
+            alignment: 'center',
+            hidden: false,
+            title: '🗺️ Explora el mapa tú mismo',
+            image: '',
+            description: '<strong>Haz clic en cualquier provincia</strong> para ver su media de PM2.5 y el número de estaciones analizadas.<br><br><strong>Haz clic en cualquier punto</strong> para conocer el nombre de la estación, su valor exacto y la calificación oficial de calidad del aire.<br><br>Usa el scroll y el ratón para navegar libremente por la península y los archipiélagos.',
+            location: {
+                center: [-3.7, 40.2],
+                zoom: 5.5,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-puntos',  opacity: 1 },
+                { layer: 'top5-peores',  opacity: 1 },
+                { layer: 'top5-mejores', opacity: 1 }
+            ],
+            onChapterExit: []
         }
     ]
 };
+
