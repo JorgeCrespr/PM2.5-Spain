@@ -49,7 +49,10 @@ var config = {
                 { layer: 'top5-peores',  opacity: 0 },
                 { layer: 'top5-mejores', opacity: 0 }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                { layer: 'top5-peores',  opacity: 1 },
+                { layer: 'top5-mejores', opacity: 1 }
+            ]
         },
         {
             id: 'mejor-estacion',
@@ -207,5 +210,4 @@ var config = {
         }
     ]
 };
-
 
