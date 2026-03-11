@@ -192,6 +192,78 @@
             if (scrollMid >= top && scrollMid < bot) setChapter(i);
         });
     });
+// ── Popups ────────────────────────────────────────────────────
+const popup = new maplibregl.Popup({
+    closeButton: true,
+    closeOnClick: false,
+    maxWidth: '220px'
+});
+
+// Click en provincias (coropletas)
+map.on('click', 'pm25-fill', (e) => {
+    const props = e.features[0].properties;
+    const nombre = props.NAME_2 || 'Provincia';
+    const valor = props.PM25_media !== null ? props.PM25_media + ' µg/m³' : 'Sin datos';
+    const estaciones = props.num_estaciones || '—';
+
+    popup.setLngLat(e.lngLat)
+        .setHTML(`
+            <strong>${nombre}</strong><br>
+            PM2.5 media: <strong>${valor}</strong><br>
+            <span style="font-size:0.85em;color:#888">${estaciones} estaciones medidas</span>
+        `)
+        .addTo(map);
+});
+
+// Click en puntos de estaciones
+map.on('click', 'pm25-puntos', (e) => {
+    const props = e.features[0].properties;
+    const nombre = props.nombre || 'Estación';
+    const valor = props.PM25_media !== null ? props.PM25_media + ' µg/m³' : 'Sin datos';
+    const calidad = props.calidad || '—';
+
+    popup.setLngLat(e.lngLat)
+        .setHTML(`
+            <strong>${nombre}</strong><br>
+            PM2.5: <strong>${valor}</strong><br>
+            Calidad: <strong style="color:${
+                calidad === 'Buena' ? '#27ae60' :
+                calidad === 'Moderada' ? '#f39c12' :
+                calidad === 'Mala' ? '#e67e22' : '#c0392b'
+            }">${calidad}</strong>
+        `)
+        .addTo(map);
+});
+
+// Click en top5 peores
+map.on('click', 'top5-peores', (e) => {
+    const props = e.features[0].properties;
+    popup.setLngLat(e.lngLat)
+        .setHTML(`
+            <strong>🔴 ${props.nombre}</strong><br>
+            PM2.5: <strong>${props.PM25_media} µg/m³</strong><br>
+            <span style="font-size:0.85em;color:#c0392b">Top 5 más contaminadas</span>
+        `)
+        .addTo(map);
+});
+
+// Click en top5 mejores
+map.on('click', 'top5-mejores', (e) => {
+    const props = e.features[0].properties;
+    popup.setLngLat(e.lngLat)
+        .setHTML(`
+            <strong>🟢 ${props.nombre}</strong><br>
+            PM2.5: <strong>${props.PM25_media} µg/m³</strong><br>
+            <span style="font-size:0.85em;color:#27ae60">Top 5 más limpias</span>
+        `)
+        .addTo(map);
+});
+
+// Cambiar cursor al pasar por encima
+['pm25-fill', 'pm25-puntos', 'top5-peores', 'top5-mejores'].forEach(layer => {
+    map.on('mouseenter', layer, () => map.getCanvas().style.cursor = 'pointer');
+    map.on('mouseleave', layer, () => map.getCanvas().style.cursor = '');
+});
 </script>
 </body>
 </html>
