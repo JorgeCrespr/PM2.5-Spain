@@ -22,7 +22,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 0 },
                 { layer: 'top5-peores',  opacity: 0 },
                 { layer: 'top5-mejores', opacity: 0 }
@@ -44,7 +44,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 1 },
                 { layer: 'top5-peores',  opacity: 0 },
                 { layer: 'top5-mejores', opacity: 0 }
@@ -66,7 +66,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -88,7 +88,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -110,7 +110,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -132,7 +132,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -154,7 +154,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -176,7 +176,7 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 1 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
@@ -198,10 +198,11 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-fill',    opacity: 1 },
                 { layer: 'pm25-puntos',  opacity: 1 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
             ],
             onChapterExit: []
         }
+
