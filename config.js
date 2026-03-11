@@ -3,7 +3,7 @@ var config = {
     showMarkers: false,
     theme: 'light',
     title: 'Calidad del Aire en España',
-    subtitle: 'Un recorrido por las provincias y estaciones con mejor y peor PM2.5 en 2023',
+    subtitle: 'Un recorrido por las estaciones con mejor y peor PM2.5 en 2023',
     byline: 'Datos: Ministerio para la Transición Ecológica — Evaluación oficial 2023',
     footer: 'Fuente: Evaluación de calidad del aire en España 2023, publicada con fecha oficial 1 de octubre de 2024. Datos de 330 estaciones de medición en toda España.',
     chapters: [
@@ -13,7 +13,7 @@ var config = {
             hidden: false,
             title: '¿Cómo está el aire que respiramos?',
             image: '',
-            description: 'Las partículas PM2.5 son fragmentos en suspensión de menos de 2,5 micrómetros de diámetro. Son tan pequeñas que penetran en los pulmones y llegan al torrente sanguíneo. La OMS recomienda no superar los <strong>5 µg/m³</strong> de media anual. Este mapa muestra los datos oficiales de <strong>330 estaciones</strong> distribuidas por toda España durante 2023.',
+            description: 'Las partículas PM2.5 son fragmentos en suspensión de menos de 2,5 micrómetros. Son tan pequeñas que penetran en los pulmones y llegan al torrente sanguíneo. La OMS recomienda no superar los <strong>5 µg/m³</strong> de media anual. Este mapa recorre las estaciones con <strong>mejor y peor calidad del aire</strong> de España según los datos oficiales de 2023.',
             location: {
                 center: [-3.7, 40.2],
                 zoom: 5.5,
@@ -52,12 +52,58 @@ var config = {
             onChapterExit: []
         },
         {
+            id: 'mejor-estacion',
+            alignment: 'right',
+            hidden: false,
+            title: 'La estación más limpia: Zorita',
+            image: '',
+            description: 'La estación de <strong>Zorita</strong>, en la provincia de Guadalajara, registra solo <strong>2,9 µg/m³</strong> — el valor más bajo de toda España y casi la mitad del límite recomendado por la OMS. Situada en un entorno rural sin actividad industrial ni tráfico intenso, es el mejor ejemplo de cómo el territorio condiciona directamente el aire que respiran sus habitantes.',
+            location: {
+                center: [-2.87, 40.78],
+                zoom: 11,
+                pitch: 40,
+                bearing: 20
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill',    opacity: 0.4 },
+                { layer: 'pm25-puntos',  opacity: 0.4 },
+                { layer: 'top5-peores',  opacity: 0 },
+                { layer: 'top5-mejores', opacity: 1 }
+            ],
+            onChapterExit: []
+        },
+        {
+            id: 'costa-este',
+            alignment: 'right',
+            hidden: false,
+            title: 'La costa este, un corredor de aire limpio',
+            image: '',
+            description: 'El litoral mediterráneo concentra varios de los mejores registros del país. <strong>Castelló-Penyeta</strong> (3,0 µg/m³), <strong>Alacant-Rabassa</strong> (3,3 µg/m³) y <strong>Albalat dels Tarongers</strong> (3,5 µg/m³), en la provincia de Valencia, forman un corredor de calidad del aire excepcional. La brisa marina, la menor densidad industrial en estas zonas específicas y las condiciones de ventilación natural explican estos valores.',
+            location: {
+                center: [-0.2, 39.4],
+                zoom: 7.5,
+                pitch: 20,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill',    opacity: 0.6 },
+                { layer: 'pm25-puntos',  opacity: 0.6 },
+                { layer: 'top5-peores',  opacity: 0 },
+                { layer: 'top5-mejores', opacity: 1 }
+            ],
+            onChapterExit: [
+                { layer: 'top5-mejores', opacity: 0 }
+            ]
+        },
+        {
             id: 'peor-estacion',
             alignment: 'left',
             hidden: false,
             title: 'La estación más contaminada: Gómez Franqueira',
             image: '',
-            description: 'Con <strong>19 µg/m³</strong>, la estación de Gómez Franqueira (Galicia) registra casi cuatro veces el límite recomendado por la OMS. Le sigue <strong>La Rábida</strong> en Huelva (17 µg/m³), situada junto al polo petroquímico de Palos de la Frontera, uno de los complejos industriales más grandes de España. Las 5 estaciones con peores valores aparecen destacadas en rojo.',
+            description: 'Con <strong>19 µg/m³</strong> — casi cuatro veces el límite de la OMS — la estación de Gómez Franqueira encabeza el ranking negativo de toda España. Le sigue <strong>La Rábida</strong> en Huelva (17 µg/m³), situada junto al polo petroquímico de Palos de la Frontera, uno de los complejos industriales más grandes del país. En ambos casos, la proximidad a focos industriales es el factor determinante.',
             location: {
                 center: [-8.72, 42.58],
                 zoom: 10,
@@ -67,7 +113,51 @@ var config = {
             mapAnimation: 'flyTo',
             onChapterEnter: [
                 { layer: 'pm25-fill',    opacity: 0.5 },
-                { layer: 'pm25-puntos',  opacity: 0.4 },
+                { layer: 'pm25-puntos',  opacity: 0.5 },
+                { layer: 'top5-peores',  opacity: 1 },
+                { layer: 'top5-mejores', opacity: 0 }
+            ],
+            onChapterExit: []
+        },
+        {
+            id: 'madrid',
+            alignment: 'left',
+            hidden: false,
+            title: 'Madrid: contaminación en el centro de la ciudad',
+            image: '',
+            description: 'Madrid es la provincia con más estaciones de medición del país (28) y registra una media de <strong>9,83 µg/m³</strong>, casi el doble del límite recomendado. La estación de <strong>Junta Municipal de Moratalaz</strong>, con 16 µg/m³, es una de las más contaminadas de toda España. El tráfico intenso y la densidad urbana son los principales responsables de los niveles elevados en el interior de la capital.',
+            location: {
+                center: [-3.68, 40.41],
+                zoom: 11,
+                pitch: 30,
+                bearing: 10
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill',    opacity: 0.5 },
+                { layer: 'pm25-puntos',  opacity: 0.8 },
+                { layer: 'top5-peores',  opacity: 1 },
+                { layer: 'top5-mejores', opacity: 0 }
+            ],
+            onChapterExit: []
+        },
+        {
+            id: 'canarias',
+            alignment: 'left',
+            hidden: false,
+            title: 'Canarias: un problema inesperado',
+            image: '',
+            description: 'Las Islas Canarias sorprenden con dos estaciones entre las cinco peores de España. <strong>Parque La Granja</strong> en Santa Cruz de Tenerife (16 µg/m³) y <strong>Centro Cultural Alfredo Krauss</strong> en Las Palmas de Gran Canaria (16 µg/m³) destacan negativamente. La causa no es la industria sino la <strong>calima</strong>: el polvo del Sáhara que cruza el Atlántico periódicamente y dispara los niveles de partículas en suspensión.',
+            location: {
+                center: [-15.5, 28.2],
+                zoom: 7.5,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill',    opacity: 0.5 },
+                { layer: 'pm25-puntos',  opacity: 0.8 },
                 { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 0 }
             ],
@@ -76,58 +166,12 @@ var config = {
             ]
         },
         {
-            id: 'mejores-provincias',
-            alignment: 'right',
-            hidden: false,
-            title: 'Las provincias con aire más limpio',
-            image: '',
-            description: 'Las provincias del interior de Castilla y León lideran la calidad del aire en España. <strong>Zamora</strong> (4,4 µg/m³), <strong>Salamanca</strong> (4,5 µg/m³) y <strong>Burgos</strong> (5,35 µg/m³) se sitúan por debajo o muy cerca del límite de la OMS. La baja densidad industrial y de tráfico, junto a la dispersión geográfica, son los principales factores.',
-            location: {
-                center: [-5.6, 41.6],
-                zoom: 7,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.75 },
-                { layer: 'pm25-puntos',  opacity: 1 },
-                { layer: 'top5-peores',  opacity: 0 },
-                { layer: 'top5-mejores', opacity: 0 }
-            ],
-            onChapterExit: []
-        },
-        {
-            id: 'mejor-estacion',
-            alignment: 'right',
-            hidden: false,
-            title: 'La estación más limpia: Zorita',
-            image: '',
-            description: 'La estación de <strong>Zorita</strong>, en la provincia de Guadalajara, registra solo <strong>2,9 µg/m³</strong>, el valor más bajo de toda España. Situada en un entorno rural alejado de focos industriales y urbanos, es un ejemplo de cómo el territorio y el modelo productivo determinan directamente la calidad del aire que respiran sus habitantes. Las 5 estaciones con mejores valores aparecen destacadas en verde.',
-            location: {
-                center: [-2.87, 40.78],
-                zoom: 11,
-                pitch: 40,
-                bearing: 20
-            },
-            mapAnimation: 'flyTo',
-            onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.5 },
-                { layer: 'pm25-puntos',  opacity: 0.4 },
-                { layer: 'top5-peores',  opacity: 0 },
-                { layer: 'top5-mejores', opacity: 1 }
-            ],
-            onChapterExit: [
-                { layer: 'top5-mejores', opacity: 0 }
-            ]
-        },
-        {
             id: 'conclusion',
             alignment: 'center',
             hidden: false,
             title: 'Un reto pendiente para la salud pública',
             image: '',
-            description: 'Según los datos oficiales de 2023, <strong>más del 30% de las estaciones</strong> superan el límite recomendado por la OMS. La contaminación por PM2.5 no es solo un problema de grandes ciudades: focos industriales, zonas costeras del sur y áreas con alta densidad de tráfico presentan valores preocupantes. Reducir estas cifras requiere políticas de movilidad, transición energética y regulación industrial a escala nacional.',
+            description: 'Más del <strong>30% de las estaciones</strong> registran valores por encima del límite recomendado por la OMS. La contaminación por PM2.5 tiene múltiples causas: industria pesada, tráfico urbano y fenómenos naturales como la calima. Reducir estos niveles requiere políticas de movilidad, transición energética y regulación industrial coordinadas a escala nacional.',
             location: {
                 center: [-3.7, 40.2],
                 zoom: 5.5,
@@ -145,4 +189,3 @@ var config = {
         }
     ]
 };
-
