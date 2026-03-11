@@ -23,7 +23,7 @@ var config = {
             mapAnimation: 'flyTo',
             onChapterEnter: [
                 { layer: 'pm25-fill',    opacity: 0.75 },
-                { layer: 'pm25-puntos',  opacity: 1 },
+                { layer: 'pm25-puntos',  opacity: 0 },
                 { layer: 'top5-peores',  opacity: 0 },
                 { layer: 'top5-mejores', opacity: 0 }
             ],
@@ -66,9 +66,9 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.4 },
+                { layer: 'pm25-fill',    opacity: 0.75 },
                 { layer: 'pm25-puntos',  opacity: 0.4 },
-                { layer: 'top5-peores',  opacity: 0 },
+                { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
             ],
             onChapterExit: []
@@ -88,14 +88,12 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.6 },
-                { layer: 'pm25-puntos',  opacity: 0.6 },
-                { layer: 'top5-peores',  opacity: 0 },
+                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-puntos',  opacity: 0.4 },
+                { layer: 'top5-peores',  opacity: 1 },
                 { layer: 'top5-mejores', opacity: 1 }
             ],
-            onChapterExit: [
-                { layer: 'top5-mejores', opacity: 0 }
-            ]
+            onChapterExit: []
         },
         {
             id: 'peor-estacion',
@@ -112,10 +110,10 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.5 },
-                { layer: 'pm25-puntos',  opacity: 0.5 },
+                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
-                { layer: 'top5-mejores', opacity: 0 }
+                { layer: 'top5-mejores', opacity: 1 }
             ],
             onChapterExit: []
         },
@@ -134,10 +132,10 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.5 },
-                { layer: 'pm25-puntos',  opacity: 0.8 },
+                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
-                { layer: 'top5-mejores', opacity: 0 }
+                { layer: 'top5-mejores', opacity: 1 }
             ],
             onChapterExit: []
         },
@@ -156,16 +154,14 @@ var config = {
             },
             mapAnimation: 'flyTo',
             onChapterEnter: [
-                { layer: 'pm25-fill',    opacity: 0.5 },
-                { layer: 'pm25-puntos',  opacity: 0.8 },
+                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-puntos',  opacity: 0.4 },
                 { layer: 'top5-peores',  opacity: 1 },
-                { layer: 'top5-mejores', opacity: 0 }
+                { layer: 'top5-mejores', opacity: 1 }
             ],
-            onChapterExit: [
-                { layer: 'top5-peores', opacity: 0 }
-            ]
+            onChapterExit: []
         },
-        {
+                {
             id: 'conclusion',
             alignment: 'center',
             hidden: false,
@@ -186,6 +182,26 @@ var config = {
                 { layer: 'top5-mejores', opacity: 1 }
             ],
             onChapterExit: []
+        },
+        {
+            id: 'explora',
+            alignment: 'center',
+            hidden: false,
+            title: '🗺️ Explora el mapa tú mismo',
+            image: '',
+            description: '<strong>Haz clic en cualquier provincia</strong> para ver su media de PM2.5 y el número de estaciones medidas.<br><br><strong>Haz clic en cualquier punto</strong> para conocer el nombre de la estación, su valor exacto y su clasificación de calidad del aire.<br><br>Usa el scroll y el ratón para moverte libremente por toda España.',
+            location: {
+                center: [-3.7, 40.2],
+                zoom: 5.5,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            onChapterEnter: [
+                { layer: 'pm25-fill',    opacity: 0.75 },
+                { layer: 'pm25-puntos',  opacity: 1 },
+                { layer: 'top5-peores',  opacity: 1 },
+                { layer: 'top5-mejores', opacity: 1 }
+            ],
+            onChapterExit: []
         }
-    ]
-};
