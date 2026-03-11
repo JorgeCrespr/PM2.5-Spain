@@ -16,7 +16,7 @@ var config = {
             description: 'Las partículas PM2.5 son fragmentos en suspensión de menos de 2,5 micrómetros. Son tan pequeñas que penetran en los pulmones y llegan al torrente sanguíneo. La OMS recomienda no superar los <strong>5 µg/m³</strong> de media anual. Este mapa recorre las estaciones con <strong>mejor y peor calidad del aire</strong> de España según los datos oficiales de 2023.',
             location: {
                 center: [-3.7, 40.2],
-                zoom: 5.5,
+                zoom: 3.5,
                 pitch: 0,
                 bearing: 0
             },
@@ -149,7 +149,7 @@ var config = {
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/At_Plaza_de_Espa%C3%B1a%2C_Santa_Cruz_de_Tenerife_2019_009_edited.jpg/1280px-At_Plaza_de_Espa%C3%B1a%2C_Santa_Cruz_de_Tenerife_2019_009_edited.jpg',
             description: 'Las Islas Canarias sorprenden con dos estaciones entre las cinco peores de España. <strong>Parque La Granja</strong> en Santa Cruz de Tenerife (16 µg/m³) y <strong>Centro Cultural Alfredo Krauss</strong> en Las Palmas de Gran Canaria (16 µg/m³) destacan negativamente. La causa no es la industria sino la <strong>calima</strong>: el polvo del Sáhara que cruza el Atlántico periódicamente y dispara los niveles de partículas en suspensión.',
             location: {
-                center: [-15.5, 28.2],
+                center: [-18.14878, 28.31941],
                 zoom: 7,
                 pitch: 0,
                 bearing: 0
