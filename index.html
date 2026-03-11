@@ -156,6 +156,8 @@
             bearing: ch.location.bearing || 0,
             duration: 2000
         });
+
+        // layer visibility
             // enter new
             (ch.onChapterEnter || []).forEach(l => {
                 if (map.getLayer(l.layer)) {
