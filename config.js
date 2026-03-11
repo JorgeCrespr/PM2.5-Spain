@@ -1,5 +1,5 @@
 var config = {
-    style: 'PM2.5First.json',
+    style: 'style.json',
     showMarkers: false,
     theme: 'light',
     title: 'Calidad del Aire en España',
@@ -145,3 +145,4 @@ var config = {
         }
     ]
 };
+
