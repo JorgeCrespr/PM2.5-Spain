@@ -55,4 +55,200 @@
     },
     {
       "id": "pm25-fill-copy",
-      "type":
+      "type": "fill",
+      "source": "ProvinciasPM2.5",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "PM25_media"
+          ],
+          4,
+          "#2ecc71",
+          7,
+          "#f1c40f",
+          10,
+          "#e67e22",
+          13,
+          "#c0392b"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#ffffff"
+      }
+    },
+    {
+      "id": "pm25-fill",
+      "type": "fill",
+      "source": "ProvinciasPM2.5",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "PM25_media"
+          ],
+          4,
+          "#2ecc71",
+          7,
+          "#f1c40f",
+          10,
+          "#e67e22",
+          13,
+          "#c0392b"
+        ],
+        "fill-opacity": {
+          "stops": [
+            [
+              6,
+              1
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "type": "exponential"
+        },
+        "fill-outline-color": "#ffffff",
+        "fill-antialias": {
+          "stops": [
+            [
+              6,
+              true
+            ],
+            [
+              10,
+              true
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "pm25-puntos",
+      "type": "circle",
+      "source": "EstacionesPM2.5",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          2,
+          8,
+          4,
+          12,
+          8,
+          16,
+          14
+        ],
+        "circle-stroke-width": 1.3,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "calidad"
+          ],
+          "Buena",
+          "#2ecc71",
+          "Moderada",
+          "#f1c40f",
+          "Mala",
+          "#e67e22",
+          "Muy mala",
+          "#c0392b",
+          "#aaaaaa"
+        ],
+        "circle-pitch-alignment": "viewport"
+      }
+    },
+    {
+      "id": "top5-mejores",
+      "type": "circle",
+      "source": "MejoresPm2.5",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          6,
+          8,
+          10,
+          12,
+          16,
+          16,
+          24
+        ],
+        "circle-color": "#27ae60",
+        "circle-stroke-width": 2.5,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-opacity": 1
+      }
+    },
+    {
+      "id": "top5-peores",
+      "type": "circle",
+      "source": "PeoresPM2.5",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          6,
+          8,
+          10,
+          12,
+          16,
+          16,
+          24
+        ],
+        "circle-color": "#c0392b",
+        "circle-stroke-width": 2.5,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-opacity": 1
+      }
+    }
+  ],
+  "id": "dark-matter"
+}
