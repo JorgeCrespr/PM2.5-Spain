@@ -156,19 +156,6 @@
             bearing: ch.location.bearing || 0,
             duration: 2000
         });
-
-        // layer visibility
-        map.once('idle', () => {
-            // exit previous
-            if (activeChapterIdx >= 0) {
-                (config.chapters[activeChapterIdx].onChapterExit || []).forEach(l => {
-                    if (map.getLayer(l.layer)) {
-                        const prop = map.getLayer(l.layer).type === 'fill'
-                            ? 'fill-opacity' : 'circle-opacity';
-                        map.setPaintProperty(l.layer, prop, l.opacity);
-                    }
-                });
-            }
             // enter new
             (ch.onChapterEnter || []).forEach(l => {
                 if (map.getLayer(l.layer)) {
