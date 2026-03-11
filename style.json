@@ -8,9 +8,7 @@
         "collapsed": false,
         "name": "Places"
       },
-      "a14c9607bc7954ba1df7205bf660433f": {
-        "name": "Boundaries"
-      },
+      "a14c9607bc7954ba1df7205bf660433f": {"name": "Boundaries"},
       "b6371a3f2f5a9932464fa3867530a2e5": {
         "collapsed": false,
         "name": "Transportation"
@@ -23,10 +21,6 @@
     "maputnik:renderer": "mlgljs"
   },
   "sources": {
-    "openmaptiles": {
-      "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL"
-    },
     "EstacionesPM2.5": {
       "type": "geojson",
       "data": "https://gist.githubusercontent.com/JorgeCrespr/8e7ff38272f5808a4f324b8d589f9b2a/raw/e79c4837ae5061cac04b7eaa1caac82d53c3c9e0/estaciones_pm25.geojson"
@@ -50,5 +44,111 @@
     {
       "id": "background",
       "type": "background",
+      "layout": {"visibility": "visible"},
+      "paint": {"background-color": "rgba(21, 43, 85, 1)"}
+    },
+    {
+      "id": "pm25-fill-copy",
+      "type": "fill",
+      "source": "ProvinciasPM2.5",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {"visibility": "none"},
       "paint": {
-        "
+        "fill-color": [
+          "interpolate",
+          ["linear"],
+          ["get", "PM25_media"],
+          4,
+          "#2ecc71",
+          7,
+          "#f1c40f",
+          10,
+          "#e67e22",
+          13,
+          "#c0392b"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#ffffff"
+      }
+    },
+    {
+      "id": "pm25-fill",
+      "type": "fill",
+      "source": "ProvinciasPM2.5",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": [
+          "interpolate",
+          ["linear"],
+          ["get", "PM25_media"],
+          4,
+          "#2ecc71",
+          7,
+          "#f1c40f",
+          10,
+          "#e67e22",
+          13,
+          "#c0392b"
+        ],
+        "fill-opacity": {"stops": [[6, 1], [10, 1]], "type": "exponential"},
+        "fill-outline-color": "#ffffff",
+        "fill-antialias": {"stops": [[6, true], [10, true]]}
+      }
+    },
+    {
+      "id": "pm25-puntos",
+      "type": "circle",
+      "source": "EstacionesPM2.5",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "circle-radius": 3,
+        "circle-stroke-width": 1.3,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-color": [
+          "match",
+          ["get", "calidad"],
+          "Buena",
+          "#2ecc71",
+          "Moderada",
+          "#f1c40f",
+          "Mala",
+          "#e67e22",
+          "Muy mala",
+          "#c0392b",
+          "#aaaaaa"
+        ],
+        "circle-pitch-alignment": "viewport"
+      }
+    },
+    {
+      "id": "top5-mejores",
+      "type": "circle",
+      "source": "MejoresPm2.5",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "circle-radius": 12,
+        "circle-color": "#27ae60",
+        "circle-stroke-width": 2.5,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-opacity": 1
+      }
+    },
+    {
+      "id": "top5-peores",
+      "type": "circle",
+      "source": "PeoresPM2.5",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "circle-radius": 12,
+        "circle-color": "#c0392b",
+        "circle-stroke-width": 2.5,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-opacity": 1
+      }
+    }
+  ],
+  "id": "dark-matter"
+}
